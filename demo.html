@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>我的記數器</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ message }}</h1>
+            <h2>{{ answer }}</h2>
+        </br>
+            Set Number:<input v-model="step"></input>
+        </br>
+            <button v-on:click="PlusN">+{{step}}</button>
+            <button v-on:click="MinusN">-1</button>
+            <button v-on:click="Reset">Reset</button>
+        </div>
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'My Counter!',
+                    answer: 0,
+                    step: 1,
+                },
+                methods:{
+                    PlusN: function(){
+                        this.answer += parseInt(this.step);
+                    },
+                    MinusN: function(){
+                        this.answer -= 1;
+                    },
+                    Reset: function(){
+                        this.answer = 0;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
+
+
+<style>
+    h1 {
+    background: #ffffe0;
+    /* text-align: center;  */
+    color: red;
+    font-family: sans-serif;
+    font-size: 150%;
+}
+</style>
